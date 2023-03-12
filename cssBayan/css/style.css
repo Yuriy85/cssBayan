@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "Arial-MT";
+  src: url("../assets/fonts/Arial-MT.woff"); /* Путь к файлу со шрифтом */
+}
+* {
+  margin: 0;
+  padding: 0;
+  position: static;
+  color: #374151;
+}
+body {
+  background-color: #f5f5eb;
+  max-width: 50vw;
+  margin: auto;
+  font-family: "Arial", sans-serif;
+}
+h1 {
+  margin: 0.2em;
+  margin-top: 0.4em;
+  font-size: 2.5em;
+}
+input {
+  height: 0;
+}
+.bayan {
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  margin: 0.2em;
+  margin-top: 0;
+  margin-bottom: 0.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: solid #37415144;
+  transition: 0.3s;
+}
+.data {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "a b"
+    "c c";
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  font-weight: bold;
+  color: #035ad9;
+}
+.h2 {
+  grid-area: a;
+  margin: 0.2em;
+  color: #035ad9;
+  font-size: 1.5em;
+  transition: 0.3s;
+}
+.svg {
+  grid-area: b;
+  scale: 1.7;
+  transition: 0.3s;
+}
+.img {
+  grid-area: c;
+  width: 21em;
+  scale: 0;
+  height: 0;
+  transition: 0.3s;
+  justify-self: center;
+}
+.item:active {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.item:active .h2 {
+  color: #035ad9;
+  transition: 0.3s;
+}
+.item:active svg path {
+  fill: #035ad9;
+  transition: 0.3s;
+}
+input:checked ~ .data .img {
+  height: 21em;
+  scale: 1;
+  transition: 0.3s;
+}
+input:checked ~ .data span {
+  color: #374151;
+}
+input:checked ~ .data .svg {
+  transform: rotate(45deg);
+}
+@media (hover: hover) and (pointer: fine) {
+  .svg {
+    scale: 0;
+    transition: 0.3s;
+  }
+  .item:hover,
+  .data:hover {
+    cursor: pointer;
+  }
+  .item:hover .img {
+    scale: 1;
+    transition: 0.3s;
+    height: 21em;
+  }
+  .bayan:hover .svg {
+    scale: 1.7;
+  }
+  .bayan:hover span {
+    color: #374151;
+  }
+  .item:hover .svg {
+    transform: rotate(45deg);
+    transition: 0.3s;
+  }
+}
+@media (hover: hover) and (pointer: fine) and (max-width: 625px) {
+  .item:hover .img {
+    height: 15em;
+  }
+}
+
+@media (max-width: 1540px) {
+  body {
+    max-width: 80vw;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .h2 {
+    font-size: 1.3em;
+  }
+}
+@media (max-width: 625px) {
+  body {
+    max-width: 90vw;
+  }
+  .img {
+    width: 15em;
+  }
+  input:checked ~ .data .img {
+    height: 15em;
+  }
+  h1 {
+    font-size: 1.7em;
+  }
+  .h2 {
+    font-size: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+}
