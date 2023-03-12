@@ -57,7 +57,7 @@ input {
 }
 .svg {
   grid-area: b;
-  scale: 0;
+  scale: 1.7;
   transition: 0.3s;
 }
 .img {
@@ -91,15 +91,19 @@ input:checked ~ .data span {
 input:checked ~ .data .svg {
   transform: rotate(45deg);
 }
-@media (min-width: 821px) {
+@media (hover: hover) and (pointer: fine) {
+  .svg {
+    scale: 0;
+    transition: 0.3s;
+  }
   .item:hover,
   .data:hover {
     cursor: pointer;
   }
   .item:hover .img {
-    height: 21em;
     scale: 1;
     transition: 0.3s;
+    height: 21em;
   }
   .bayan:hover .svg {
     scale: 1.7;
@@ -112,6 +116,12 @@ input:checked ~ .data .svg {
     transition: 0.3s;
   }
 }
+@media (hover: hover) and (pointer: fine) and (max-width: 625px) {
+  .item:hover .img {
+    height: 15em;
+  }
+}
+
 @media (max-width: 1540px) {
   body {
     max-width: 80vw;
@@ -140,10 +150,5 @@ input:checked ~ .data .svg {
     font-size: 1em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-  }
-}
-@media (max-width: 820px) {
-  .svg {
-    scale: 1.7;
   }
 }
