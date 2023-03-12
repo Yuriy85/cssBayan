@@ -72,23 +72,23 @@ input {
   opacity: 0.7;
   transition: 0.3s;
 }
-.item:active .h2:first-of-type {
-  color: #035ad9 !important;
+.item:active .h2 {
+  color: #035ad9;
   transition: 0.3s;
 }
-.item:active svg path:first-of-type {
+.item:active svg path {
   fill: #035ad9;
   transition: 0.3s;
 }
-.item input:checked + .data .img:last-of-type {
+input:checked ~ .data .img {
   height: 21em;
   scale: 1;
   transition: 0.3s;
 }
-.item input:checked + .data .h2:last-of-type {
+input:checked ~ .data span {
   color: #374151;
 }
-.item input:checked + .data .svg:last-of-type {
+input:checked ~ .data .svg {
   transform: rotate(45deg);
 }
 @media (min-width: 821px) {
@@ -96,24 +96,24 @@ input {
   .data:hover {
     cursor: pointer;
   }
-  .item:hover .img:last-of-type {
+  .item:hover .img {
     height: 30em;
     scale: 1;
     transition: 0.3s;
   }
-  .bayan:hover .svg:last-of-type {
+  .bayan:hover .svg {
     scale: 1.7;
   }
-  .bayan:hover span:nth-child(1n) {
+  .bayan:hover span {
     color: #374151;
   }
-  .item:hover .svg:last-of-type {
+  .item:hover .svg {
     transform: rotate(45deg);
     transition: 0.3s;
   }
 }
 @media (min-width: 1541px) {
-  .item:hover .img:last-of-type {
+  .item:hover .img {
     height: 21em;
   }
 }
@@ -124,7 +124,7 @@ input {
   .img {
     width: 30em;
   }
-  .item input:checked + .data .img:last-of-type {
+  input:checked ~ .data .img {
     height: 30em;
   }
   h1 {
@@ -143,7 +143,7 @@ input {
   .img {
     width: 17em;
   }
-  .item input:checked + .data .img:last-of-type {
+  input:checked ~ .data .img {
     height: 17em;
   }
   h1 {
