@@ -97,7 +97,7 @@ input:checked ~ .data .svg {
     cursor: pointer;
   }
   .item:hover .img {
-    height: 30em;
+    height: 21em;
     scale: 1;
     transition: 0.3s;
   }
@@ -112,28 +112,15 @@ input:checked ~ .data .svg {
     transition: 0.3s;
   }
 }
-@media (min-width: 1541px) {
-  .item:hover .img {
-    height: 21em;
-  }
-}
 @media (max-width: 1540px) {
   body {
     max-width: 80vw;
-  }
-  .img {
-    width: 30em;
-  }
-  input:checked ~ .data .img {
-    height: 30em;
   }
   h1 {
     font-size: 2em;
   }
   .h2 {
     font-size: 1.3em;
-    margin-top: 1em;
-    margin-bottom: 1em;
   }
 }
 @media (max-width: 625px) {
